@@ -1,6 +1,7 @@
 import { GoogleGenAI, Type } from '@google/genai';
 import type { ExtractedSignals, RiskLevel } from './riskEngine';
 import { extractUrlsFromText } from './urlChecker';
+import { updateGeminiStatus } from './geminiStatusTracker';
 
 const DEFAULT_MODELS = ['gemini-2.5-flash', 'gemini-2.5-flash-lite'];
 const RISK_LEVELS: RiskLevel[] = ['STOP', 'CAUTION', 'VERIFY', 'NO_CLEAR_RISK'];
@@ -109,6 +110,8 @@ async function generateStructuredJson(
           config
         });
 
+        updateGeminiStatus('ready');
+
         return {
           parsed: parseJsonResponse(response.text),
           modelName
@@ -137,6 +140,7 @@ async function generateStructuredJson(
   const rawMessage = String(lastError?.message || lastError || 'Gemini unavailable');
 
   if (sawQuotaError) {
+    updateGeminiStatus('rate_limited');
     throw new GeminiAnalysisError(
       rawMessage,
       429,
@@ -145,6 +149,7 @@ async function generateStructuredJson(
     );
   }
 
+  updateGeminiStatus('error', rawMessage);
   throw new GeminiAnalysisError(
     rawMessage,
     503,

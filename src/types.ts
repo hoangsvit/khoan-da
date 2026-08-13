@@ -61,6 +61,14 @@ export interface SafeBrowsingResult {
   disclaimer: string;
 }
 
+export interface GeminiStatusInfo {
+  connected: boolean;
+  status: 'ready' | 'rate_limited' | 'error' | 'not_configured';
+  message: string;
+  model: string;
+  lastChecked?: string;
+}
+
 export interface RiskAnalysisResult {
   riskLevel: RiskLevel;
   headlineTitle: string;
@@ -87,6 +95,7 @@ export interface RiskAnalysisResult {
   scamCategory?: string;
   aiDetailedReasoning?: string;
   analysisEngine: 'GEMINI_AI_100';
+  geminiStatus?: GeminiStatusInfo;
 }
 
 export interface RegistryStats {

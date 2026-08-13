@@ -85,9 +85,41 @@ export const RiskResultDisplay: React.FC<RiskResultDisplayProps> = ({ result }) 
       transition={{ duration: 0.25 }}
       className="space-y-4"
     >
-      <div className="flex items-center gap-2 px-1">
-        <Sparkles className="h-4 w-4 text-indigo-500" />
-        <h2 className="text-sm font-extrabold text-slate-900">Kết quả phân tích</h2>
+      <div className="flex items-center justify-between gap-2 px-1">
+        <div className="flex items-center gap-2">
+          <Sparkles className="h-4 w-4 text-indigo-500" />
+          <h2 className="text-sm font-extrabold text-slate-900">Kết quả phân tích</h2>
+        </div>
+
+        {result.geminiStatus && (
+          <div
+            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium ${
+              result.geminiStatus.status === 'ready'
+                ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
+                : result.geminiStatus.status === 'rate_limited'
+                  ? 'border-amber-200 bg-amber-50 text-amber-800'
+                  : 'border-slate-200 bg-slate-50 text-slate-700'
+            }`}
+            title={result.geminiStatus.message}
+          >
+            <span
+              className={`h-2 w-2 rounded-full ${
+                result.geminiStatus.status === 'ready'
+                  ? 'bg-emerald-500'
+                  : result.geminiStatus.status === 'rate_limited'
+                    ? 'bg-amber-500'
+                    : 'bg-slate-400'
+              }`}
+            />
+            <span>
+              {result.geminiStatus.status === 'ready'
+                ? 'Phân tích Gemini AI'
+                : result.geminiStatus.status === 'rate_limited'
+                  ? 'Chế độ dự phòng (Gemini 429)'
+                  : 'Chế độ dự phòng'}
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_310px]">

@@ -7,6 +7,7 @@ import { extractSignalsFromInput, generateFinalConsumerResponse } from './server
 import { detectConsumerModeWithGemini } from './server/geminiModeDetector';
 import { checkSafeBrowsing } from './server/safeBrowsing';
 import { computeRiskAnalysis } from './server/riskEngine';
+import { checkGeminiConnection, getCachedGeminiStatus } from './server/geminiStatusTracker';
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
@@ -49,6 +50,7 @@ function rateLimitMiddleware(req: Request, res: Response, next: () => void) {
 
 app.get('/api/health', (_req: Request, res: Response) => {
   const stats = getRegistryStats();
+  const geminiStatus = getCachedGeminiStatus();
 
   res.json({
     status: 'ok',
@@ -56,6 +58,7 @@ app.get('/api/health', (_req: Request, res: Response) => {
     inputRouting: 'gemini-auto-detect',
     promptStrategy: 'evidence-first-v2',
     geminiConfigured: Boolean(String(process.env.GEMINI_API_KEY || '').trim()),
+    geminiStatus,
     model: process.env.GEMINI_MODEL || 'auto',
     officialDomainEntities: stats.officialDomainEntities,
     officialBankEntities: stats.officialBankEntities,
@@ -63,6 +66,12 @@ app.get('/api/health', (_req: Request, res: Response) => {
     licensedForeignBranchesAsOf: stats.licensedForeignBranchesAsOf,
     registryEntries: stats.registryEntries
   });
+});
+
+app.get('/api/gemini-status', async (req: Request, res: Response) => {
+  const force = req.query.force === 'true';
+  const status = await checkGeminiConnection(force);
+  res.json(status);
 });
 
 app.post('/api/analyze', rateLimitMiddleware, async (req: Request, res: Response) => {
@@ -156,7 +165,10 @@ app.post('/api/analyze', rateLimitMiddleware, async (req: Request, res: Response
       };
     }
 
-    res.json(responseResult);
+    res.json({
+      ...responseResult,
+      geminiStatus: getCachedGeminiStatus()
+    });
   } catch (err: any) {
     console.error('Error during analysis endpoint:', err);
 
@@ -200,7 +212,8 @@ app.post('/api/analyze', rateLimitMiddleware, async (req: Request, res: Response
         rawSummary: 'Nội dung người dùng kiểm tra'
       },
       disclaimer: 'Kết quả hỗ trợ nhận diện rủi ro và không phải là bảo đảm tuyệt đối về độ an toàn của nội dung.',
-      analysisEngine: 'GEMINI_AI_100'
+      analysisEngine: 'GEMINI_AI_100',
+      geminiStatus: getCachedGeminiStatus()
     });
   }
 });

@@ -1,21 +1,38 @@
 import React, { useEffect, useState } from 'react';
-import { AlertCircle, Sparkles, X } from 'lucide-react';
+import { AlertCircle, RefreshCw, Sparkles, X } from 'lucide-react';
 import { AnalysisForm } from './components/AnalysisForm';
 import { DemoPresetButtons } from './components/DemoPresetButtons';
 import { Header } from './components/Header';
 import { RecoveryModule } from './components/RecoveryModule';
 import { RegistryInfoModal } from './components/RegistryInfoModal';
 import { RiskResultDisplay } from './components/RiskResultDisplay';
-import { ConsumerMode, RegistryStats, RiskAnalysisResult } from './types';
+import { ConsumerMode, GeminiStatusInfo, RegistryStats, RiskAnalysisResult } from './types';
 
 export default function App() {
   const [view, setView] = useState<'check' | 'recovery'>('check');
   const [analysisResult, setAnalysisResult] = useState<RiskAnalysisResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [registryStats, setRegistryStats] = useState<RegistryStats | undefined>(undefined);
+  const [geminiStatus, setGeminiStatus] = useState<GeminiStatusInfo | undefined>(undefined);
+  const [isCheckingGemini, setIsCheckingGemini] = useState(false);
   const [isRegistryModalOpen, setIsRegistryModalOpen] = useState(false);
   const [isTestPanelOpen, setIsTestPanelOpen] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const fetchGeminiStatus = async (force = false) => {
+    setIsCheckingGemini(true);
+    try {
+      const res = await fetch(`/api/gemini-status${force ? '?force=true' : ''}`);
+      if (res.ok) {
+        const data = await res.json();
+        setGeminiStatus(data);
+      }
+    } catch {
+      // keep existing status on network error
+    } finally {
+      setIsCheckingGemini(false);
+    }
+  };
 
   useEffect(() => {
     fetch('/api/health')
@@ -29,9 +46,14 @@ export default function App() {
             licensedForeignBranchesAsOf: data.licensedForeignBranchesAsOf,
             registryEntries: data.registryEntries
           });
+          if (data.geminiStatus) {
+            setGeminiStatus(data.geminiStatus);
+          }
         }
       })
       .catch(() => undefined);
+
+    void fetchGeminiStatus();
   }, []);
 
   const handleAnalyze = async (text: string, imageBase64?: string, mimeType?: string) => {
@@ -51,9 +73,14 @@ export default function App() {
         throw new Error(errorData.error || 'Không thể hoàn tất kiểm tra lúc này.');
       }
 
-      setAnalysisResult(await response.json());
+      const data: RiskAnalysisResult = await response.json();
+      setAnalysisResult(data);
+      if (data.geminiStatus) {
+        setGeminiStatus(data.geminiStatus);
+      }
     } catch (error: any) {
       setErrorMsg(error?.message || 'Không thể thực hiện phân tích lúc này. Vui lòng thử lại.');
+      void fetchGeminiStatus(true);
     } finally {
       setIsLoading(false);
     }
@@ -83,6 +110,9 @@ export default function App() {
       <Header
         isRecovery={view === 'recovery'}
         registryStats={registryStats}
+        geminiStatus={geminiStatus}
+        isCheckingGemini={isCheckingGemini}
+        onRefreshGeminiStatus={() => fetchGeminiStatus(true)}
         onOpenRegistryModal={() => setIsRegistryModalOpen(true)}
         onOpenTestScenarios={() => setIsTestPanelOpen(true)}
         onOpenRecovery={handleOpenRecovery}
@@ -111,10 +141,39 @@ export default function App() {
                     Dán nội dung, đường link hoặc ảnh. Gemini sẽ đọc ngữ cảnh trước, sau đó hệ thống mới đối chiếu các tín hiệu kỹ thuật liên quan.
                   </p>
                 </div>
-                <div className="inline-flex w-fit items-center gap-2 rounded-2xl border border-indigo-100 bg-indigo-50 px-3.5 py-2 text-xs font-bold text-indigo-700">
+                
+                <button
+                  type="button"
+                  onClick={() => fetchGeminiStatus(true)}
+                  disabled={isCheckingGemini}
+                  className={`inline-flex w-fit items-center gap-2 rounded-2xl border px-3.5 py-2 text-xs font-bold transition shadow-sm ${
+                    geminiStatus?.status === 'ready'
+                      ? 'border-emerald-200 bg-emerald-50/80 text-emerald-800 hover:bg-emerald-100/80'
+                      : geminiStatus?.status === 'rate_limited'
+                        ? 'border-amber-200 bg-amber-50/80 text-amber-800 hover:bg-amber-100/80'
+                        : 'border-slate-200 bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
+                  title="Nhấp để kiểm tra lại kết nối Gemini API"
+                >
+                  <span
+                    className={`h-2 w-2 rounded-full ${
+                      geminiStatus?.status === 'ready'
+                        ? 'bg-emerald-500 animate-pulse'
+                        : geminiStatus?.status === 'rate_limited'
+                          ? 'bg-amber-500 animate-ping'
+                          : 'bg-slate-400'
+                    }`}
+                  />
                   <Sparkles className="h-3.5 w-3.5" />
-                  Phân tích bằng Gemini
-                </div>
+                  <span>
+                    {geminiStatus?.status === 'ready'
+                      ? 'Gemini API: Sẵn sàng'
+                      : geminiStatus?.status === 'rate_limited'
+                        ? 'Gemini API: Giới hạn (Dùng dự phòng)'
+                        : 'Gemini API: Kiểm tra kết nối'}
+                  </span>
+                  <RefreshCw className={`ml-1 h-3 w-3 ${isCheckingGemini ? 'animate-spin' : ''}`} />
+                </button>
               </div>
 
               <AnalysisForm
