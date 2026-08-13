@@ -1,0 +1,502 @@
+[
+  {
+    "id": "vcb",
+    "name": "Ngân hàng TMCP Ngoại thương Việt Nam (Vietcombank)",
+    "aliases": ["Vietcombank", "VCB"],
+    "domains": ["vietcombank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Vietcombank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "tcb",
+    "name": "Ngân hàng TMCP Kỹ thương Việt Nam (Techcombank)",
+    "aliases": ["Techcombank", "TCB"],
+    "domains": ["techcombank.com", "techcombank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Techcombank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "mbbank",
+    "name": "Ngân hàng TMCP Quân đội (MBBank)",
+    "aliases": ["MB", "MBBank", "Ngân hàng Quân Đội"],
+    "domains": ["mbbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official MBBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "bidv",
+    "name": "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
+    "aliases": ["BIDV", "Ngân hàng Đầu tư và Phát triển Việt Nam"],
+    "domains": ["bidv.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official BIDV Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "agribank",
+    "name": "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam (Agribank)",
+    "aliases": ["Agribank", "VBARD"],
+    "domains": ["agribank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Agribank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "vietinbank",
+    "name": "Ngân hàng TMCP Công Thương Việt Nam (VietinBank)",
+    "aliases": ["VietinBank", "CTG"],
+    "domains": ["vietinbank.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official VietinBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "vpbank",
+    "name": "Ngân hàng TMCP Việt Nam Thịnh Vượng (VPBank)",
+    "aliases": ["VPBank", "Ngân hàng Thịnh Vượng"],
+    "domains": ["vpbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official VPBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "tpbank",
+    "name": "Ngân hàng TMCP Tiên Phong (TPBank)",
+    "aliases": ["TPBank", "Tien Phong Bank"],
+    "domains": ["tpb.vn", "tpbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official TPBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "acb",
+    "name": "Ngân hàng TMCP Á Châu (ACB)",
+    "aliases": ["ACB", "Ngân hàng Á Châu"],
+    "domains": ["acb.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official ACB Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "sacombank",
+    "name": "Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank)",
+    "aliases": ["Sacombank", "STB"],
+    "domains": ["sacombank.com.vn", "sacombank.com"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Sacombank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "hdbank",
+    "name": "Ngân hàng TMCP Phát triển TP. Hồ Chí Minh (HDBank)",
+    "aliases": ["HDBank", "HDB"],
+    "domains": ["hdbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official HDBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "vib",
+    "name": "Ngân hàng TMCP Quốc tế Việt Nam (VIB)",
+    "aliases": ["VIB", "Ngân hàng Quốc tế"],
+    "domains": ["vib.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official VIB Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "shb",
+    "name": "Ngân hàng TMCP Sài Gòn - Hà Nội (SHB)",
+    "aliases": ["SHB"],
+    "domains": ["shb.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official SHB Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "msb",
+    "name": "Ngân hàng TMCP Hàng Hải Việt Nam (MSB)",
+    "aliases": ["MSB", "Maritime Bank"],
+    "domains": ["msb.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official MSB Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "ocb",
+    "name": "Ngân hàng TMCP Phương Đông (OCB)",
+    "aliases": ["OCB", "Phương Đông"],
+    "domains": ["ocb.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official OCB Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "seabank",
+    "name": "Ngân hàng TMCP Đông Nam Á (SeABank)",
+    "aliases": ["SeABank"],
+    "domains": ["seabank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official SeABank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "eximbank",
+    "name": "Ngân hàng TMCP Xuất Nhập khẩu Việt Nam (Eximbank)",
+    "aliases": ["Eximbank", "EIB"],
+    "domains": ["eximbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Eximbank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "lpbank",
+    "name": "Ngân hàng TMCP Lộc Phát Việt Nam (LPBank)",
+    "aliases": ["LPBank", "LienVietPostBank"],
+    "domains": ["lpbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official LPBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "abbank",
+    "name": "Ngân hàng TMCP An Bình (ABBank)",
+    "aliases": ["ABBank", "An Bình"],
+    "domains": ["abbank.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official ABBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "bacabank",
+    "name": "Ngân hàng TMCP Bắc Á (Bac A Bank)",
+    "aliases": ["BacABank", "Bắc Á"],
+    "domains": ["baca-bank.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Bac A Bank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "namabank",
+    "name": "Ngân hàng TMCP Nam Á (Nam A Bank)",
+    "aliases": ["NamABank", "Nam Á"],
+    "domains": ["namabank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Nam A Bank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "vietabank",
+    "name": "Ngân hàng TMCP Việt Á (VietA Bank)",
+    "aliases": ["VietABank", "Việt Á"],
+    "domains": ["vietabank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official VietA Bank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "ncb",
+    "name": "Ngân hàng TMCP Quốc Dân (NCB)",
+    "aliases": ["NCB", "Quốc Dân"],
+    "domains": ["ncb-bank.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official NCB Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "kienlongbank",
+    "name": "Ngân hàng TMCP Kiên Long (KienlongBank)",
+    "aliases": ["KienlongBank"],
+    "domains": ["kienlongbank.com"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official KienlongBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "baovietbank",
+    "name": "Ngân hàng TMCP Bảo Việt (BaoViet Bank)",
+    "aliases": ["BaoVietBank", "Bảo Việt"],
+    "domains": ["baovietbank.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official BaoViet Bank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "pvcombank",
+    "name": "Ngân hàng TMCP Đại Chúng Việt Nam (PVcomBank)",
+    "aliases": ["PVcomBank"],
+    "domains": ["pvcombank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official PVcomBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "pgbank",
+    "name": "Ngân hàng TMCP Thịnh vượng và Phát triển (PGBank)",
+    "aliases": ["PGBank"],
+    "domains": ["pgbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official PGBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "saigonbank",
+    "name": "Ngân hàng TMCP Sài Gòn Công Thương (Saigonbank)",
+    "aliases": ["Saigonbank"],
+    "domains": ["saigonbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Saigonbank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "vietbank",
+    "name": "Ngân hàng TMCP Việt Nam Thương Tín (VietBank)",
+    "aliases": ["VietBank"],
+    "domains": ["vietbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official VietBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "gpbank",
+    "name": "Ngân hàng Thương mại TNHH MTV Dầu Khí Toàn Cầu (GPBank)",
+    "aliases": ["GPBank"],
+    "domains": ["gpbank.com.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official GPBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "oceanbank",
+    "name": "Ngân hàng Thương mại TNHH MTV Đại Dương (OceanBank)",
+    "aliases": ["OceanBank"],
+    "domains": ["oceanbank.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official OceanBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "cbbank",
+    "name": "Ngân hàng Thương mại TNHH MTV Xây dựng Việt Nam (CBBank)",
+    "aliases": ["CBBank", "Xây Dựng"],
+    "domains": ["cbbank.vn"],
+    "institution_type": "commercial_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official CBBank Portal",
+    "sbv_licensing_source": "SBV Banking License Registry 2023"
+  },
+  {
+    "id": "hsbc",
+    "name": "Ngân hàng TNHH Một thành viên HSBC (Việt Nam)",
+    "aliases": ["HSBC"],
+    "domains": ["hsbc.com.vn"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official HSBC Vietnam Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "scb_int",
+    "name": "Ngân hàng TNHH MTV Standard Chartered (Việt Nam)",
+    "aliases": ["Standard Chartered"],
+    "domains": ["sc.com"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Standard Chartered Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "shinhan",
+    "name": "Ngân hàng TNHH MTV Shinhan Việt Nam",
+    "aliases": ["Shinhan", "Shinhan Bank"],
+    "domains": ["shinhan.com.vn"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Shinhan Bank Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "uob",
+    "name": "Ngân hàng TNHH MTV United Overseas Bank (Việt Nam) (UOB)",
+    "aliases": ["UOB"],
+    "domains": ["uob.com.vn"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official UOB Vietnam Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "cimb",
+    "name": "Ngân hàng TNHH MTV CIMB Việt Nam",
+    "aliases": ["CIMB"],
+    "domains": ["cimbbank.com.vn"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official CIMB Vietnam Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "publicbank",
+    "name": "Ngân hàng TNHH MTV Public Bank Việt Nam",
+    "aliases": ["Public Bank"],
+    "domains": ["publicbank.com.vn"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Public Bank Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "hongleong",
+    "name": "Ngân hàng TNHH MTV Hong Leong Việt Nam",
+    "aliases": ["Hong Leong"],
+    "domains": ["hlbank.com.vn"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Hong Leong Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "woori",
+    "name": "Ngân hàng TNHH MTV Woori Việt Nam",
+    "aliases": ["Woori", "Woori Bank"],
+    "domains": ["wooribank.com.vn", "woori.com.vn"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Woori Bank Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "kbank",
+    "name": "Ngân hàng Đại chúng TNHH Kasikornbank - Chi nhánh TP.HCM",
+    "aliases": ["KBank", "Kasikornbank"],
+    "domains": ["kasikornbank.com.vn", "kasikornbank.com"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official KBank Vietnam Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "ivb",
+    "name": "Ngân hàng TNHH Indovina (IVB)",
+    "aliases": ["IVB", "Indovina Bank"],
+    "domains": ["indovinabank.com.vn"],
+    "institution_type": "joint_venture_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Indovina Bank Portal",
+    "sbv_licensing_source": "SBV Joint Venture Registry 2023"
+  },
+  {
+    "id": "vrb",
+    "name": "Ngân hàng Liên doanh Việt - Nga (VRB)",
+    "aliases": ["VRB"],
+    "domains": ["vrbank.com.vn"],
+    "institution_type": "joint_venture_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official VRB Portal",
+    "sbv_licensing_source": "SBV Joint Venture Registry 2023"
+  },
+  {
+    "id": "vbsp",
+    "name": "Ngân hàng Chính sách xã hội Việt Nam (VBSP)",
+    "aliases": ["VBSP", "VCSXH", "Chính sách xã hội"],
+    "domains": ["vbsp.org.vn"],
+    "institution_type": "policy_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official VBSP Portal",
+    "sbv_licensing_source": "SBV Policy Bank Registry 2023"
+  },
+  {
+    "id": "coopbank",
+    "name": "Ngân hàng Hợp tác xã Việt Nam (Co-opBank)",
+    "aliases": ["Co-opBank", "CoopBank"],
+    "domains": ["co-opbank.vn"],
+    "institution_type": "coop_bank",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Co-opBank Portal",
+    "sbv_licensing_source": "SBV Coop Bank Registry 2023"
+  },
+  {
+    "id": "dbs",
+    "name": "DBS Bank Ltd - Chi nhánh TP.HCM",
+    "aliases": ["DBS"],
+    "domains": ["dbs.com"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official DBS Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "citibank",
+    "name": "Citibank N.A. - Chi nhánh Hà Nội & TP.HCM",
+    "aliases": ["Citibank", "Citi"],
+    "domains": ["citibank.com.vn"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Citibank Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "maybank",
+    "name": "Malayan Banking Berhad - Chi nhánh TP.HCM",
+    "aliases": ["Maybank"],
+    "domains": ["maybank.com"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official Maybank Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "anz",
+    "name": "ANZ Bank Vietnam",
+    "aliases": ["ANZ"],
+    "domains": ["anz.com"],
+    "institution_type": "foreign_bank_branch",
+    "verification": "first_party_verified",
+    "first_party_source": "Official ANZ Portal",
+    "sbv_licensing_source": "SBV Foreign Bank Registry 2023"
+  },
+  {
+    "id": "dvc_gov",
+    "name": "Cổng Dịch vụ công Quốc gia / Hệ thống Định danh VNeID",
+    "aliases": ["Dịch vụ công", "Cổng dịch vụ công quốc gia", "VNeID", "Bộ Công An"],
+    "domains": ["dichvucong.gov.vn", "vneid.gov.vn"],
+    "institution_type": "public_portal",
+    "verification": "first_party_verified",
+    "first_party_source": "Cổng Dịch vụ công Quốc gia",
+    "sbv_licensing_source": "Chính phủ nước CHXHCN Việt Nam"
+  }
+]

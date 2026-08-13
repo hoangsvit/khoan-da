@@ -1,0 +1,6 @@
+{
+  "name": "Khoan Đã! - AI Scam Pre-check Assistant",
+  "description": "Cảnh báo lừa đảo thông minh cho người Việt - Kiểm tra SMS, Zalo, URL, QR, APK, chuyển khoản và hỗ trợ khẩn cấp.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
